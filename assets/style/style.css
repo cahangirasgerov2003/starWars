@@ -1,0 +1,13 @@
+body {
+  background: url("../img/star_wars_xwing.jpg") center center no-repeat;
+}
+#container-game img {
+  width: 150px;
+  height: 100px;
+}
+.carakters {
+  border: 3px solid green;
+}
+.carakters:hover {
+  cursor: pointer;
+}
