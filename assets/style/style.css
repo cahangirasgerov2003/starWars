@@ -1,13 +1,31 @@
 body {
-  background: url("../img/star_wars_xwing.jpg") center center no-repeat;
+  background: url("../img/star_wars_xwing.jpg") center -250px no-repeat;
+  font-family: var(--mainFontFamily);
 }
 #container-game img {
   width: 150px;
   height: 100px;
+  border-radius: 2px;
 }
 .carakters {
   border: 3px solid green;
 }
 .carakters:hover {
   cursor: pointer;
+  animation: caraktersAnimation 2s linear 0s infinite alternate;
+}
+.title-game {
+  font-size: 300%;
+}
+.font-second {
+  font-size: 200%;
+  color: black;
+}
+@keyframes caraktersAnimation {
+  to {
+    transform: scale(1, 1);
+  }
+  from {
+    transform: scale(0.95, 0.95);
+  }
 }
