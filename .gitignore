@@ -22,11 +22,6 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# Pictures
-*.png   
-*.img
-*.jpg
-
 # Logs
 logs
 *.log
