@@ -9,6 +9,7 @@ body {
 }
 .carakters {
   border: 3px solid green;
+  background-color: white;
 }
 .carakters:hover {
   cursor: pointer;

@@ -25,12 +25,12 @@
         <h1 class="text-center title-game">Star Wars RPG!</h1>
       </div>
 
-      <div>
+      <div id="selectCharacter">
         <h2 class="font-second">Select Your Character</h2>
       </div>
 
       <div class="d-flex flex-wrap">
-        <div class="bg-white carakters">
+        <div class="carakters d-inline-block">
           <p class="m-0 text-center">Obi-Wan Kenobi</p>
           <div class="image-container my-1 px-3">
             <img src="./assets/img/obi-wan.jpg" />
@@ -38,15 +38,15 @@
           <p class="m-0 text-center">120</p>
         </div>
 
-        <div class="bg-white carakters">
+        <div class="carakters d-inline-block">
           <p class="m-0 text-center">Lucy Scywalker</p>
           <div class="image-container my-1 px-3">
             <img src="./assets/img/luke-skywalker.jpg" />
           </div>
-          <p class="m-0 text-center">120</p>
+          <p class="m-0 text-center">200</p>
         </div>
 
-        <div class="bg-white carakters">
+        <div class="carakters d-inline-block">
           <p class="m-0 text-center">Darth Sidious</p>
           <div class="image-container my-1 px-3">
             <img src="./assets/img/darth-sidious.png" />
@@ -54,7 +54,7 @@
           <p class="m-0 text-center">150</p>
         </div>
 
-        <div class="bg-white carakters">
+        <div class="carakters d-inline-block">
           <p class="m-0 text-center">Darth Maul</p>
           <div class="image-container my-1 px-3">
             <img src="./assets/img/darth-maul.jpg" />
@@ -65,12 +65,14 @@
 
       <div>
         <h2 class="font-second">Your Character</h2>
+        <div id="myCharacter">---</div>
       </div>
 
       <div></div>
 
-      <div>
+      <div id="enemiesAvailableContainer">
         <p class="font-second">Enemies Available To Attack</p>
+        <div id="enemiesAvailable">---</div>
       </div>
 
       <div></div>
@@ -85,8 +87,9 @@
         </button>
       </div>
 
-      <div>
+      <div id="defenderContainer">
         <p class="font-second">Defender</p>
+        <div id="defender">---</div>
       </div>
 
       <div></div>
