@@ -38,17 +38,17 @@ $(document).ready(() => {
     }
   });
   $(document).on("click", ".attackButton", function () {
-    if (clickCounter >= 2) {
+    if (clickCounter >= 2 && myHealth > 0 && defenderHealth > 0) {
       myAttack();
       defenderAttack();
       shootGun(myAttack(), defenderAttack());
     }
   });
   function myAttack() {
-    return Math.floor(myEnergy * Math.random());
+    return Math.floor(myEnergy * Math.random()) / 2;
   }
   function defenderAttack() {
-    return Math.floor(defenderEnergy * Math.random());
+    return Math.floor(defenderEnergy * Math.random()) / 2;
   }
   function shootGun(shoot1, shoot2) {
     myHealth = myHealth - shoot2;
@@ -58,7 +58,6 @@ $(document).ready(() => {
       $(".information2").html("You have been defeated...GAME OVER!!!");
       $(".information").html("");
     } else if (defenderHealth <= 0 && myHealth > 0) {
-      $(".restart-button").addClass("d-block");
       $("#defenderContainer div.carakters").removeClass("d-inline-block");
       $("#defenderContainer div.carakters").addClass("d-none");
       $(".information").html(
@@ -67,16 +66,31 @@ $(document).ready(() => {
           .html()}, you can choose to fight another enemy.`
       );
       $(".information2").html("");
+      setTimeout(() => {
+        clickCounter = 1;
+        $(".information2").html("");
+        $(".information").html("");
+      }, 3000);
     } else if (defenderHealth <= 0 && myHealth <= 0) {
+      $(".information2").html("You both lost");
+      $(".information").html("");
+      $(".restart-button").addClass("d-block");
     } else {
       $(".information").html(
-        `You attacked Luke Skywalker for ${shoot1} damage.`
+        `You attacked ${$(".carakters p.name-carakters")
+          .last()
+          .html()}, for ${shoot1} damage.`
       );
       $(".information2").html(
-        `Luke Skywalker attacked you back for ${shoot2} damage.`
+        `${$(".carakters p.name-carakters")
+          .last()
+          .html()}, attacked you back for ${shoot2} damage.`
       );
     }
     $(".carakters p.carakterPower").last().html(defenderHealth);
     $(".carakters p.carakterPower").first().html(myHealth);
   }
+  $(".restart-button").on("click", () => {
+    window.location.reload();
+  });
 });
